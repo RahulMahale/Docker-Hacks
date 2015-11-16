@@ -1,0 +1,16 @@
+
+
+#Changing a data directory in Centos 6.5
+#following are the steps to change the docker's data directory in Centos
+
+sudo su
+service docker stop
+
+vim /etc/sysconfig/docker 
+#and add the following line in the file and save it
+other_args=" -g /data/docker -p /var/run/docker.pid"
+
+service docker start
+
+
+  
